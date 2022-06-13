@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" href = "style.css">
+    <title>HE HE HE</title>
+</head>
+<body onload = "getValue()">
+    <div id = "container">
+        <button onclick = "setWhiteTheme()"> Set white theme</button>
+        <button onclick = "setDarkTheme()"> Set dark theme</button>
+        <button onclick = "setCookies()"> Set cookies</button>
+    </div>
+    <script>
+        function setWhiteTheme(){
+            console.log(1);
+            localStorage.setItem('theme', 'white');
+            const root = document.getElementById('container');
+            root.className = 'white';
+        }
+        function setDarkTheme(){
+            localStorage.setItem('theme', 'dark');
+            const root = document.getElementById('container');
+            root.className = 'dark';
+        }   
+        function getValue(){
+            const theme = localStorage.getItem('theme');
+            const root = document.getElementById('container');
+            root.className = theme;
+        }
+        function setCookies(){
+            document.cookie = "user = Dalida; expires = Wed, 15 Jun 2022 06:00:00 GMT";
+        }
+    </script>
+</body>
+</html>
